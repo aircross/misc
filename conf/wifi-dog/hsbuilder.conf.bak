@@ -1,0 +1,9 @@
+GW_ID=087B3A9C
+USERNAME=wiwiz
+ETNIF=eth0
+GWIF=eth1
+AS_HOSTNAME=cp.wiwiz.com:80,cp2.wiwiz.com:80,42.121.98.148:80,74.117.62.156:80,74.117.62.157:80
+AS_PATH=/as/s/
+WIFIDOG_CONFPATH=/etc
+UPDATE_URL_BASE=http://dl.wiwiz.com/hsbuilder-util
+TIMEOUT=10
