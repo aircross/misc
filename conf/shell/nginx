@@ -1,0 +1,38 @@
+#!/bin/sh
+
+function_start_nginx()
+{
+    printf "Starting Nginx...\n"
+    ulimit -SHn 51200
+    /usr/local/nginx/sbin/nginx
+}
+
+function_test_nginx()
+{
+    printf "Test Nginx Config...\n"
+	/usr/local/nginx/sbin/nginx -t
+}
+
+function_reload_nginx()
+{
+	printf "Reload Nginx Config...\n"
+	/usr/local/nginx/sbin/nginx -s reload
+}
+
+function_restart_nginx()
+{
+    printf "Restarting Nginx...\n"
+    kill -HUP `cat /usr/local/nginx/nginx.pid`
+}
+
+if [ "$1" = "start" ]; then
+    function_start_nginx
+elif [ "$1" = "test" ]; then
+    function_test_nginx
+elif [ "$1" = "reload" ]; then
+    function_reload_nginx
+elif [ "$1" = "restart" ]; then
+    function_restart_nginx
+else
+    printf "Usage: $0 {start|test|reload|restart}\n"
+fi
